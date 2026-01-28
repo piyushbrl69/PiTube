@@ -6,9 +6,21 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import CategoryBar from "./CategoryBar";
 import User from "./User";
 import Bottom from "./Bottom";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
+
+  const pathname = usePathname();
+  const { replace } = useRouter();
+  const searchParams = useSearchParams();
+  function handleSearch(term: string) {
+    const params = new URLSearchParams(searchParams);
+    if (term) {
+      params.set("query", term);
+    } else params.delete("query");
+    replace(`${pathname}?${params.toString()}`);
+  }
 
   return (
     <>
@@ -25,13 +37,16 @@ export default function Navbar() {
               type="search"
               className="flex-1 px-4 bg-[#121212] text-sm outline-none"
               placeholder="Search"
+              onChange={(e) => {
+                handleSearch(e.target.value);
+              }}
+              defaultValue={searchParams.get("query")?.toString()}
             />
             <button className="w-14 flex items-center justify-center bg-[#212121]">
               <FiSearch size={20} />
             </button>
-            <User />
           </div>
-
+          <User />
           {/* Mobile Search Button */}
           <div className="md:hidden">
             <button

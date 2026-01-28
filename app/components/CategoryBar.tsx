@@ -2,8 +2,10 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { categories } from "../data/categories";
-
-export default function CategoryBar() {
+type CategoryBarProps = {
+  disabled?: boolean;
+};
+export default function CategoryBar({ disabled }: CategoryBarProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
 

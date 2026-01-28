@@ -6,7 +6,18 @@ import { MdSubscriptions } from "react-icons/md";
 import { useState } from "react";
 import User from "./User";
 
-export default function Bottom() {
+import { useRouter, useSearchParams } from "next/navigation";
+import { categories } from "../data/categories";
+type BottomBarProps = {
+  disabled?: boolean;
+};
+
+export default function Bottom({ disabled }: BottomBarProps) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const activeBtn = searchParams.get("/") || "Home";
+
   return (
     <>
       <div className="fixed bottom-0 left-0 w-full flex justify-around items-center">
