@@ -1,8 +1,15 @@
 // data/projects.ts
+import { StaticImageData } from 'next/image';
+import scamImage from "./scam.png";
+import portImg from "./port.png";
+import dataImg from "./data.png";
+import landingImg from "./la.png";
+import todoImg from "./todo.png";
+import catImg from "./image.png";
 
 export interface Card {
   id: number;
-  img1: string;
+  img1:  string;
   title: string;
   img2: string;
   views: string;
@@ -32,7 +39,7 @@ export const projects: Card[] = [
     category: ["nextjs", "tailwind"], 
     views: "1.1M views",
     // You can use local paths or external URLs
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: scamImage.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
@@ -43,8 +50,8 @@ export const projects: Card[] = [
     title: "To Do List", 
     category: ["react", "css"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
-    img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
+      img1: todoImg.src,
+      img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
     description: "A real-time data visualization tool." 
@@ -54,7 +61,7 @@ export const projects: Card[] = [
     title: "Cat Fax", 
     category: ["javascript", "css"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: catImg.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
@@ -65,7 +72,7 @@ export const projects: Card[] = [
     title: "Portfolio", 
     category: ["nextjs", "tailwind"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: portImg.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
@@ -76,7 +83,7 @@ export const projects: Card[] = [
     title: "PTube", 
     category: ["nextjs", "tailwind"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: portImg.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
@@ -87,7 +94,7 @@ export const projects: Card[] = [
     title: "Data Table Manager", 
     category: ["react", "redux"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: dataImg.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",
@@ -98,7 +105,7 @@ export const projects: Card[] = [
     title: "Web Craft", 
     category: ["nextjs", "tailwind"], 
     views: "1.1M views",
-    img1: "https://img.youtube.com/vi/RrOGQD4Z9A4/maxresdefault.jpg", 
+    img1: landingImg.src,
     img2: "https://yt3.googleusercontent.com/l68ZvAfp35KQ-c7poZgNTFcFdnyb5OuSnL7TsJ4j1nTWxp2MsAnSzShKxGwpa_LYWdcChz6dBA=s88-c-k-c0x00ffffff-no-rj",
     date: "6/25",
     postedAt: "4 weeks ago",

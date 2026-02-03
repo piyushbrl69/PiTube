@@ -5,7 +5,7 @@ import { MdSubscriptions } from "react-icons/md";
 
 import { useState } from "react";
 import User from "./User";
-
+import { Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { categories } from "../data/categories";
 type BottomBarProps = {
@@ -19,8 +19,8 @@ export default function Bottom({ disabled }: BottomBarProps) {
   const activeBtn = searchParams.get("/") || "Home";
 
   return (
-    <>
-      <div className="fixed bottom-0 left-0 w-full flex justify-around items-center">
+    <Suspense fallback={<div></div>}>
+      <div className="h-[75x] mt-10 fixed bottom-0 left-0 w-full flex justify-around items-center bg-[#0a0a0a]">
         <button className="flex flex-col items-center justify-center text-white">
           <AiFillHome size={24} />
           <span className="text-sm mt-1">Home</span>
@@ -38,6 +38,6 @@ export default function Bottom({ disabled }: BottomBarProps) {
           <span className="text-sm mt-1">You</span>
         </button>
       </div>
-    </>
+    </Suspense>
   );
 }
